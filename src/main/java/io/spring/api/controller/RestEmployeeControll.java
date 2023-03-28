@@ -54,7 +54,7 @@ public class RestEmployeeControll {
         return Response.generateResponse("data gagal tersimpan", HttpStatus.BAD_REQUEST);
     }
 
-    @PutMapping("employee/update/{id}")
+    @PutMapping("employee/{id}")
     public ResponseEntity<Object> Save(@RequestBody Employee addemployee, @PathVariable(required = true) Integer id) {
         Employee employee = employeeService.Get(id);
         employee.setEmail(addemployee.getEmail());
